@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+    <persistence-unit name="MysqlPersistenceUnit">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.connection.provider_class"
+                      value="oracle.ucp.hibernate.sample.UCPConnectionProvider" />
+            <property name="hibernate.ucp.connectionFactoryClassName"
+                      value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource"/>
+            <property name="hibernate.ucp.url" value="jdbc:mysql://localhost:3306/jpa"/>
+            <property name="hibernate.ucp.user" value="jpa"/>
+            <property name="hibernate.ucp.password" value="jpa"/>
+            <property name="ConnectionPoolName" value="MyPool"/>
+            <property name="hibernate.ucp.minPoolSize" value="5"/>
+            <property name="hibernate.ucp.maxPoolSize" value="50"/>
+
+
+
+            <!--property name="hibernate.connection.url" value="jdbc:mysql://localhost/jpa"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="jpa"/>
+            <property name="hibernate.connection.password" value="jpa"/-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hbm2ddl.auto" value="validate"/>
+        </properties>
+    </persistence-unit>
+</persistence>
