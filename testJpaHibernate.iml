@@ -44,5 +44,12 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.42" level="project" />
     <orderEntry type="library" name="Maven: com.oracle.jdbc:ucp:12.2.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.oracle.jdbc:ojdbc8:12.2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.4.6.v20170531" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-http:9.4.6.v20170531" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.4.6.v20170531" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-jmx:9.4.6.v20170531" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:9.4.6.v20170531" level="project" />
+    <orderEntry type="library" name="Maven: org.mindrot:jbcrypt:0.4" level="project" />
   </component>
 </module>

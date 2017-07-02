@@ -9,7 +9,7 @@
         <column name="UserName" type="VARCHAR(20)">
             <constraints primaryKey="true" primaryKeyName="PK_username"/>
         </column>
-        <column name="password" type="VARCHAR(50)"></column>
+        <column name="password" type="VARCHAR(60)"/>
     </createTable>
 </changeSet>
 </databaseChangeLog>
