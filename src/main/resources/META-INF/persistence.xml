@@ -3,7 +3,9 @@
 
     <persistence-unit name="MysqlPersistenceUnit">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
         <properties>
+            <!--UCP-->
             <property name="hibernate.connection.provider_class"
                       value="oracle.ucp.hibernate.sample.UCPConnectionProvider" />
             <property name="hibernate.ucp.connectionFactoryClassName"
@@ -15,13 +17,21 @@
             <property name="hibernate.ucp.minPoolSize" value="5"/>
             <property name="hibernate.ucp.maxPoolSize" value="50"/>
 
+            <!--Level2 cache-->
+            <property name="javax.persistence.query.timeout" value="3000"/>
+            <property name="javax.persistence.lock.timeout" value="2000"/>
+            <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory"/>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>
 
 
+            <!--Hibernate-->
             <!--property name="hibernate.connection.url" value="jdbc:mysql://localhost/jpa"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="jpa"/>
             <property name="hibernate.connection.password" value="jpa"/-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
+            <property name="hibernate.generate_statistics" value="true"/>
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>

@@ -140,6 +140,6 @@ public class UCPConnectionProvider
 
     @Override
     public void stop() {
-        close();
+        //close();
     }
 }

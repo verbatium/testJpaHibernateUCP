@@ -1,10 +1,13 @@
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity(name = "Users")
-public class User {
-   String userName;
-   String password;
+@Cacheable()
+public class User implements Serializable {
+   private String userName;
+   private String password;
 
    @Id
     public String getUserName() {
