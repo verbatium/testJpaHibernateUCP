@@ -40,6 +40,8 @@ public class Main {
 
     private static void startServer() throws Exception {
         Server server = new Server(8080);
+        server.setDumpAfterStart(false);
+        server.setDumpBeforeStop(false);
         // Setup JMX
         MBeanContainer mbContainer = new MBeanContainer(
                 ManagementFactory.getPlatformMBeanServer());
@@ -49,7 +51,7 @@ public class Main {
         server.addBean(Log.getLog());
 
         server.start();
-        server.dumpStdErr();
+        //server.dumpStdErr();
         server.join();
     }
 
