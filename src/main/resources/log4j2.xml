@@ -6,8 +6,8 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="org.hibernate.SQL" level="TRACE"/>
-        <Logger name="org.hibernate.type" level="TRACE"/>
+        <Logger name="org.hibernate.SQL" level="INFO"/>
+        <Logger name="org.hibernate.type" level="INFO"/>
         <Logger name="oracle.jdbc" level="TRACE"/>
         <Logger name="oracle.jdbc.OracleConnection" level="TRACE"/>
         <Logger name="org.hibernate.engine.internal.StatisticalLoggingSessionEventListener" level="WARN"/>
