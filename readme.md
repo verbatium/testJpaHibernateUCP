@@ -1,0 +1,2 @@
+-Dorg.apache.logging.log4j.simplelog.StatusLogger.level=TRACE
+-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager

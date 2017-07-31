@@ -6,10 +6,11 @@ import java.io.Serializable;
 @Entity(name = "Users")
 @Cacheable()
 public class User implements Serializable {
-   private String userName;
-   private String password;
 
-   @Id
+    private String userName;
+    private String password;
+
+    @Id
     public String getUserName() {
         return userName;
     }

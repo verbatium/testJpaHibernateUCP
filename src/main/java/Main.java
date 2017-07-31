@@ -6,9 +6,11 @@ import liquibase.database.DatabaseFactory;
 import liquibase.database.jvm.JdbcConnection;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.ClassLoaderResourceAccessor;
+import org.apache.log4j.Logger;
 import org.eclipse.jetty.jmx.MBeanContainer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.util.log.Log;
+import org.eclipse.jetty.util.log.Slf4jLog;
 import org.hibernate.Session;
 import org.hibernate.engine.spi.SessionFactoryImplementor;
 import org.mindrot.jbcrypt.BCrypt;
@@ -19,10 +21,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Main {
-
+    static Logger LOG = Logger.getLogger(Main.class);
     private static EntityManagerFactory entityManagerFactory;
 
     public static void main(String... args) throws Exception {
+        Log.setLog(new Slf4jLog());
         entityManagerFactory = Persistence.createEntityManagerFactory("MysqlPersistenceUnit");
         try {
             updateDB();
@@ -57,13 +60,13 @@ public class Main {
             Cache cache = entityManagerFactory.getCache();
             boolean exists = cache.contains(User.class, "admin");
             if (exists) {
-                System.out.println("in cache");
+                LOG.info("in cache");
             } else {
-                System.out.println("not in cache");
+                LOG.info("not in cache");
 
             }
             User admin = entityManager.find(User.class, "admin");
-            System.out.println(admin);
+            LOG.info("found: " + admin);
         } finally {
             entityManager.close();
         }
