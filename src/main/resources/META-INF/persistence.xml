@@ -10,11 +10,11 @@
                       value="oracle.ucp.hibernate.sample.UCPConnectionProvider" />
             <property name="hibernate.ucp.connectionFactoryClassName"
                       value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource"/>
-            <property name="hibernate.ucp.url" value="jdbc:mysql://localhost:3306/jpa"/>
+            <property name="hibernate.ucp.url" value="jdbc:mysql://localhost:3306/jpa?logger=com.mysql.jdbc.log.Slf4JLogger&amp;profileSQL=true"/>
             <property name="hibernate.ucp.user" value="jpa"/>
             <property name="hibernate.ucp.password" value="jpa"/>
             <property name="ConnectionPoolName" value="MyPool"/>
-            <property name="hibernate.ucp.minPoolSize" value="5"/>
+            <property name="hibernate.ucp.minPoolSize" value="2"/>
             <property name="hibernate.ucp.maxPoolSize" value="50"/>
 
             <!--Level2 cache-->
@@ -26,16 +26,13 @@
 
 
             <!--Hibernate-->
-            <!--property name="hibernate.connection.url" value="jdbc:mysql://localhost/jpa"/>
-            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.username" value="jpa"/>
-            <property name="hibernate.connection.password" value="jpa"/-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
             <property name="hibernate.generate_statistics" value="true"/>
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="false"/>
-            <property name="hbm2ddl.auto" value="validate"/>
+            <property name="hibernate.connection.autocommit" value="false"/>
+            <!--property name="hbm2ddl.auto" value="validate"/-->
         </properties>
     </persistence-unit>
 </persistence>
