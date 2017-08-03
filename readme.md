@@ -1,2 +1,2 @@
--Dorg.apache.logging.log4j.simplelog.StatusLogger.level=TRACE
+lOG4j2 - java.util.logging adapter:
 -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager

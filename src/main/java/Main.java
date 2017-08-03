@@ -13,7 +13,6 @@ import org.eclipse.jetty.util.log.Log;
 import org.hibernate.Session;
 import org.hibernate.engine.spi.SessionFactoryImplementor;
 import org.mindrot.jbcrypt.BCrypt;
-import org.slf4j.bridge.SLF4JBridgeHandler;
 
 import javax.persistence.*;
 import java.lang.management.ManagementFactory;
@@ -25,11 +24,6 @@ public class Main {
     private static EntityManagerFactory entityManagerFactory;
 
     public static void main(String... args) throws Exception {
-        SLF4JBridgeHandler.removeHandlersForRootLogger();  // (since SLF4J 1.6.5)
-        SLF4JBridgeHandler.install();
-        //java.util.logging.Logger.getLogger("global").setLevel(Level.ALL);
-        //java.util.logging.Logger.getLogger("oracle.ucp").setLevel(Level.ALL);
-
         entityManagerFactory = Persistence.createEntityManagerFactory("MysqlPersistenceUnit");
         try {
             updateDB();
